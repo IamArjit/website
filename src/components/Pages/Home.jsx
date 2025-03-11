@@ -9,12 +9,45 @@ const Home = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, email, phone);
-    setName("");
-    setEmail("");
-    setPhone("");
+
+    const url =
+      "https://script.google.com/macros/s/AKfycbwxX3WVxxRNSZgWTLu7gurbmnkFeSQYgNSkKHmf3v6sFqaiZD95hWtbyPruZpA8TVR2/exec";
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `Name=${name}&Email=${email}&Phone=${phone}`,
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        alert(data);
+      })
+      .catch((error) => console.log(error));
+
+    // if (!name || !email || !phone) {
+    //   alert("All fields are required.");
+    //   return;
+    // }
+
+    // const formData = { name, email, phone };
+
+    // try {
+    //   setIsSubmitting(true);
+    //   await axios.post(
+    //     "https://script.google.com/macros/s/AKfycby1vzCdkObkDgmeYeWxp5ijxCn8pAJL92z0whVLMDG7geEISeK79zVhcRsXu71QE6iN/exec",
+    //     formData
+    //   );
+    //   setName("");
+    //   setEmail("");
+    //   setPhone("");
+    //   alert("Form data submitted successfully!");
+    // } catch (error) {
+    //   console.error(error);
+    //   alert("There was an error submitting your form. Please try again.");
+    // } finally {
+    //   setIsSubmitting(false);
+    // }
   };
 
   return (
