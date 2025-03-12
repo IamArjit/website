@@ -83,7 +83,7 @@ const Navbar = () => {
                 to={route.path}
                 onClick={handleLinkClick}
                 className="navbar-link"
-                activeClassName="active-link"
+                activeclassname="active-link"
               >
                 <span
                   ref={(el) => (iconsRef.current[index] = el)} // Assign ref to the icon
