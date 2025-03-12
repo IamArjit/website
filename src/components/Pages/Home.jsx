@@ -3,11 +3,13 @@ import "./Home.css";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,7 +65,7 @@ const Home = () => {
             is well-known and respected for his unique methods and profound
             insights…
           </p>
-          <button className="cta-button">
+          <button className="cta-button" onClick={() => navigate("/contact")}>
             Book Appointment <FaArrowRightLong />
           </button>
         </div>

@@ -1,3 +1,4 @@
+/* General Navbar Styles */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -14,6 +15,7 @@
 .logo img {
   display: block;
   height: 40px;
+  cursor: pointer;
 }
 
 /* Navbar styling */
@@ -21,6 +23,8 @@
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
+  transition: width 0.3s ease;
+  overflow: hidden;
 }
 
 /* Navbar unordered list styling */
@@ -89,7 +93,40 @@
   text-decoration: none;
 }
 
-/* Responsive design for smaller screens */
+/* Icon transitions */
+.icon {
+  display: inline-block;
+  font-size: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-link:hover .icon {
+  transform: scale(1.2); /* Scale the icon on hover */
+}
+
+.navbar.open .navbar-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hamburger icon styles */
+.hamburger-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.hamburger-icon:hover {
+  opacity: 0.7;
+}
+
+/* =======================
+   Responsive Styles
+======================== */
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .navbar-container {
     flex-direction: row;
@@ -138,7 +175,7 @@
     text-align: center;
   }
 
-  /* Hover effect */
+  /* Hover effect on mobile */
   .navbar-link:hover {
     color: rgb(230, 149, 1);
     transform: translateY(-2px);
@@ -153,9 +190,51 @@
   }
 }
 
-/* Style for the hamburger icon on larger screens */
+/* Large Screen Styles (Desktop) */
 @media (min-width: 769px) {
-  .hamburger-icon {
-    display: none;
+  .navbar-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
+
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+    transform: translateX(0);
+  }
+
+  .navbar ul {
+    flex-direction: row;
+  }
+
+  .navbar-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .navbar li {
+    margin: 0 20px;
+  }
+
+  .icon {
+    font-size: 20px;
+    margin-right: 6px;
+  }
+
+  .hamburger-icon {
+    display: none; /* Hide hamburger icon on larger screens */
+  }
+}
+
+/* Ensure the navbar is sticky across all screen sizes */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
