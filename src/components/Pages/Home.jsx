@@ -110,6 +110,108 @@ const Home = () => {
           <p className="statistic-label">VIDEOS</p>
         </div>
       </div>
+
+      <div className="black">
+        <h1>Our Services</h1>
+        <div className="grid-container">
+          <div className="service-item">
+            <img src="./pic1.webp" alt="Astrology" />
+            <p>Astrology- Understanding Your True Potential</p>
+          </div>
+          <div className="service-item">
+            <img src="./pic2.webp" alt="Birth Chart" />
+            <p>Birth Chart Astrology– Unlocking the Secrets of Your Birth</p>
+          </div>
+          <div className="service-item">
+            <img src="./pic3.webp" alt="Love Astrology" />
+            <p>Love Astrology– Navigating the Path of Romance</p>
+          </div>
+          <div className="service-item">
+            <img src="./pic4.webp" alt="Career Prediction" />
+            <p>Career Prediction– Unlocking Your Professional Success</p>
+          </div>
+          <div className="service-item">
+            <img src="./pic5.webp" alt="Health Astrology" />
+            <p>Health Astrology– Achieving Wellness Through Cosmic Insights</p>
+          </div>
+          <div className="service-item">
+            <img src="./pic6.webp" alt="Matchmaking" />
+            <p>Matchmaking– Harmonizing Relationships Through Astrology</p>
+          </div>
+          <div className="service-item">
+            <img src="./pic7.webp" alt="Wealth and Prosperity" />
+            <p>Wealth and Prosperity Astrology– Attracting Abundance</p>
+          </div>
+          <div className="service-item">
+            <img src="./pic1.webp" alt="Astro Vastu" />
+            <p>Astro Vastu– Aligning Your Space with Cosmic Energies</p>
+          </div>
+        </div>
+
+        <h1 class="carousel-heading">Explore Our Upcoming & Live Courses</h1>
+        <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <div class="carousel-item">
+              <img src="./pic1.webp" alt="Course 1" class="carousel-image" />
+              <p class="carousel-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                tenetur.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img src="./pic2.webp" alt="Course 2" class="carousel-image" />
+              <p class="carousel-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                tenetur.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img src="./pic3.webp" alt="Course 3" class="carousel-image" />
+              <p class="carousel-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                tenetur.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img src="./pic4.webp" alt="Course 4" class="carousel-image" />
+              <p class="carousel-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                tenetur.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img src="./pic5.webp" alt="Course 5" class="carousel-image" />
+              <p class="carousel-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                tenetur.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img src="./pic6.webp" alt="Course 6" class="carousel-image" />
+              <p class="carousel-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                tenetur.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img src="./pic7.webp" alt="Course 7" class="carousel-image" />
+              <p class="carousel-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                tenetur.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <img src="./pic8.webp" alt="Course 8" class="carousel-image" />
+              <p class="carousel-description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
+                tenetur.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn prev-btn">Prev</button>
+        <button class="carousel-btn next-btn">Next</button>
+      </div>
     </>
   );
 };

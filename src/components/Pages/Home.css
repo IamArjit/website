@@ -223,6 +223,128 @@
   margin-top: 0;
 }
 
+.black {
+  background-color: #222;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.service-item {
+  background-color: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+}
+
+.service-item p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #ddd;
+  font-weight: 500;
+  transition: opacity 0.5s ease;
+}
+
+/* Hover effect on service-item */
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Image effects on hover */
+.service-item:hover img {
+  transform: scale(1.05) rotate(2deg);
+  filter: brightness(1.15);
+  opacity: 0.9;
+}
+
+/* Fade in effect for text */
+.service-item:hover p {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Carousel heading styles */
+.carousel-heading {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Carousel container styles */
+.carousel-container {
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual carousel item styles */
+.carousel-item {
+  width: 300px;
+  flex-shrink: 0;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Image styles */
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Description styles */
+.carousel-description {
+  font-size: 1em;
+  color: #666;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Hover effect for carousel items */
+.carousel-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive styling */
 @media (max-width: 768px) {
   .content-container {
