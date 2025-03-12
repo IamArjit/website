@@ -1,3 +1,4 @@
+/* Basic setup for the home-container */
 .home-container {
   width: 100%;
   height: 100vh;
@@ -6,6 +7,8 @@
   align-items: center;
   background-color: #fff;
   position: relative;
+  overflow: hidden;
+  margin-top: 10px;
 }
 
 /* Container for text and form */
@@ -22,6 +25,7 @@
   color: white;
 }
 
+/* Left content section */
 .left-content {
   width: 45%;
 }
@@ -38,6 +42,7 @@
   color: rgba(0, 0, 0, 0.8);
 }
 
+/* Call to action button styling */
 .cta-button {
   display: flex;
   align-items: center;
@@ -60,6 +65,7 @@
   background-color: #ff5722;
 }
 
+/* Right content section for form */
 .right-content {
   width: 45%;
   background: rgba(0, 0, 0, 0.6);
@@ -68,6 +74,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Form styling */
 .astrology-form {
   display: flex;
   flex-direction: column;
@@ -106,7 +113,7 @@
   font-size: 1.8rem;
 }
 
-/* Image container styling */
+/* Styling for the image container */
 .image-container {
   width: 100%;
   height: 100%;
@@ -120,6 +127,100 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Styling for the second image container */
+.second-image-container {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  z-index: 0;
+  margin-top: 0;
+}
+
+.second-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Add blackish overlay to the second image */
+.second-image-container img {
+  position: relative;
+  z-index: 1;
+}
+
+.second-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+/* New container for the three images - above the second image */
+.image-box {
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  gap: 30px;
+}
+
+/* Each image inside its own box */
+.image-box-item {
+  width: 30%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+/* Image styling inside the box */
+.image-box-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the images inside the box */
+.image-box-item:hover img {
+  transform: scale(1.2);
+}
+
+.image-box-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for p tags inside the image box */
+.statistic-number {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.statistic-label {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0;
 }
 
 /* Responsive styling */
@@ -136,6 +237,26 @@
   }
 
   .astrology-form input {
+    font-size: 1rem;
+  }
+
+  /* Adjust the image box for smaller screens */
+  .image-box {
+    flex-direction: column;
+    width: 90%;
+    gap: 20px;
+  }
+
+  .image-box-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .statistic-number {
+    font-size: 1.5rem;
+  }
+
+  .statistic-label {
     font-size: 1rem;
   }
 }
