@@ -415,6 +415,32 @@ const Home = () => {
               ></iframe>
             </div>
           </div>
+
+          <div className="video-item">
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage:
+                  "url('https://img.youtube.com/vi/Gt6e9P97vvg/maxresdefault.jpg')",
+              }}
+            >
+              <img
+                className="youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/YouTube_icon_%282013-2017%29.png"
+                alt="YouTube"
+              />
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Rcv6AQz_tSQ?si=16xXyzQcTgjNHUJF"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
         </div>
         {/* Can you make me a card in which first there should be an image then a nold heading then its description and the card's height should be longer and the card also in a carousal and there should also be logic to move it left to right or right to left make it attractive */}
         <h1>Our Blogs</h1>

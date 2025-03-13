@@ -620,3 +620,133 @@ h1 {
     font-size: 1.8rem;
   }
 }
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Global Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1.media {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 150, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Video Grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+  gap: 20px;
+  width: 100%; /* Ensure it takes full width of its container */
+  max-width: 1200px; /* Max width to prevent it from being too wide */
+  margin-top: 2rem;
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  padding: 0 20px; /* Adding some padding to ensure it’s not right at the edge */
+  box-sizing: border-box; /* To respect padding and margin properly */
+
+  margin-left: 5%; /* Slightly shift the grid to the right */
+  margin-right: auto; /* Ensures grid is not stretched across the full width */
+}
+
+/* Video Item */
+.video-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Thumbnail Style */
+.thumbnail {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* YouTube Logo */
+.youtube-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* Iframe (Video) Style */
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover Effects */
+.video-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.video-item:hover .thumbnail {
+  transform: scale(1.1);
+  filter: brightness(80%);
+}
+
+.video-item:hover .youtube-logo {
+  opacity: 1;
+}
+
+/* Responsive Grid for smaller screens */
+@media (max-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 columns for tablets and medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  h1.media {
+    font-size: 2rem;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr; /* 1 column for mobile screens */
+  }
+}
