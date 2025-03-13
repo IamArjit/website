@@ -4,12 +4,68 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Home = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const images = [
+    {
+      src: "./pic1.webp",
+      alt: "Course 1",
+      description: "Course 1 description",
+    },
+    {
+      src: "./pic2.webp",
+      alt: "Course 2",
+      description: "Course 2 description",
+    },
+    {
+      src: "./pic3.webp",
+      alt: "Course 3",
+      description: "Course 3 description",
+    },
+    {
+      src: "./pic4.webp",
+      alt: "Course 4",
+      description: "Course 4 description",
+    },
+    {
+      src: "./pic5.webp",
+      alt: "Course 5",
+      description: "Course 5 description",
+    },
+    {
+      src: "./pic6.webp",
+      alt: "Course 6",
+      description: "Course 6 description",
+    },
+    {
+      src: "./pic7.webp",
+      alt: "Course 7",
+      description: "Course 7 description",
+    },
+    {
+      src: "./pic1.webp",
+      alt: "Course 8",
+      description: "Course 8 description",
+    },
+  ];
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % (images.length - 2));
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + (images.length - 2)) % (images.length - 2)
+    );
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -148,69 +204,220 @@ const Home = () => {
           </div>
         </div>
 
-        <h1 class="carousel-heading">Explore Our Upcoming & Live Courses</h1>
-        <div class="carousel-container">
-          <div class="carousel-wrapper">
-            <div class="carousel-item">
-              <img src="./pic1.webp" alt="Course 1" class="carousel-image" />
-              <p class="carousel-description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-                tenetur.
-              </p>
+        <div className="carousel-container">
+          <h1 className="carousel-heading">
+            Explore Our Upcoming & Live Courses
+          </h1>
+          <div className="carousel-wrapper">
+            {/* Display 3 images at a time */}
+            {images
+              .slice(currentIndex, currentIndex + 3)
+              .map((image, index) => (
+                <div className="carousel-item" key={index}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="carousel-image"
+                  />
+                  <p className="carousel-description">{image.description}</p>
+                </div>
+              ))}
+          </div>
+          <button className="carousel-btn prev-btn" onClick={goToPrev}>
+            <IoIosArrowBack style={{ paddingRight: "4px" }} />
+          </button>
+          <button className="carousel-btn next-btn" onClick={goToNext}>
+            <IoIosArrowForward />
+          </button>
+        </div>
+
+        <h1 className="media">Media For Interactions</h1>
+        <div className="video-grid">
+          <div className="video-item">
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage:
+                  "url('https://img.youtube.com/vi/uJuCg9c91NQ/maxresdefault.jpg')",
+              }}
+            >
+              <img
+                className="youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/YouTube_icon_%282013-2017%29.png"
+                alt="YouTube"
+              />
+              <iframe
+                src="https://www.youtube.com/embed/uJuCg9c91NQ?si=7d_mlOsR9cuXsnjW"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
-            <div class="carousel-item">
-              <img src="./pic2.webp" alt="Course 2" class="carousel-image" />
-              <p class="carousel-description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-                tenetur.
-              </p>
+          </div>
+
+          <div className="video-item">
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage:
+                  "url('https://img.youtube.com/vi/h-9U23__dxk/maxresdefault.jpg')",
+              }}
+            >
+              <img
+                className="youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/YouTube_icon_%282013-2017%29.png"
+                alt="YouTube"
+              />
+              <iframe
+                src="https://www.youtube.com/embed/h-9U23__dxk?si=DjOKC0HHjTVNPViv"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
-            <div class="carousel-item">
-              <img src="./pic3.webp" alt="Course 3" class="carousel-image" />
-              <p class="carousel-description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-                tenetur.
-              </p>
+          </div>
+
+          <div className="video-item">
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage:
+                  "url('https://img.youtube.com/vi/WnGSdOS3w7I/maxresdefault.jpg')",
+              }}
+            >
+              <img
+                className="youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/YouTube_icon_%282013-2017%29.png"
+                alt="YouTube"
+              />
+              <iframe
+                src="https://www.youtube.com/embed/WnGSdOS3w7I?si=qfSdZnT2CxChugNu"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
-            <div class="carousel-item">
-              <img src="./pic4.webp" alt="Course 4" class="carousel-image" />
-              <p class="carousel-description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-                tenetur.
-              </p>
+          </div>
+
+          <div className="video-item">
+            <div
+              class="thumbnail"
+              style={{
+                backgroundImage:
+                  "url('https://img.youtube.com/vi/8u7pp-RzdNw/maxresdefault.jpg')",
+              }}
+            >
+              <img
+                className="youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/YouTube_icon_%282013-2017%29.png"
+                alt="YouTube"
+              />
+              <iframe
+                src="https://www.youtube.com/embed/8u7pp-RzdNw?si=bDaA_cZr6xNPKIQ6"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
-            <div class="carousel-item">
-              <img src="./pic5.webp" alt="Course 5" class="carousel-image" />
-              <p class="carousel-description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-                tenetur.
-              </p>
+          </div>
+
+          <div className="video-item">
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage:
+                  "url('https://img.youtube.com/vi/Bji_sPBhPe4/maxresdefault.jpg')",
+              }}
+            >
+              <img
+                className="youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/YouTube_icon_%282013-2017%29.png"
+                alt="YouTube"
+              />
+              <iframe
+                src="https://www.youtube.com/embed/Bji_sPBhPe4?si=0mvzDQGMJhtHJl9Q"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
-            <div class="carousel-item">
-              <img src="./pic6.webp" alt="Course 6" class="carousel-image" />
-              <p class="carousel-description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-                tenetur.
-              </p>
+          </div>
+
+          <div className="video-item">
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage:
+                  "url('https://img.youtube.com/vi/LgDNQ0H27L0/maxresdefault.jpg')",
+              }}
+            >
+              <img
+                className="youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/YouTube_icon_%282013-2017%29.png"
+                alt="YouTube"
+              />
+              <iframe
+                src="https://www.youtube.com/embed/LgDNQ0H27L0?si=_FjZ51KarKQTg6Qz"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
-            <div class="carousel-item">
-              <img src="./pic7.webp" alt="Course 7" class="carousel-image" />
-              <p class="carousel-description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-                tenetur.
-              </p>
+          </div>
+
+          <div className="video-item">
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage:
+                  "url('https://img.youtube.com/vi/6yximacpOQk/maxresdefault.jpg')",
+              }}
+            >
+              <img
+                className="youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/YouTube_icon_%282013-2017%29.png"
+                alt="YouTube"
+              />
+              <iframe
+                src="https://www.youtube.com/embed/6yximacpOQk?si=lcnXSqXXyyP3jxAq"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
-            <div class="carousel-item">
-              <img src="./pic8.webp" alt="Course 8" class="carousel-image" />
-              <p class="carousel-description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit,
-                tenetur.
-              </p>
+          </div>
+
+          <div className="video-item">
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage:
+                  "url('https://img.youtube.com/vi/Gt6e9P97vvg/maxresdefault.jpg')",
+              }}
+            >
+              <img
+                className="youtube-logo"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/YouTube_icon_%282013-2017%29.png"
+                alt="YouTube"
+              />
+              <iframe
+                src="https://www.youtube.com/embed/Gt6e9P97vvg?si=easm1BZwvXGPtYgp"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>
-        <button class="carousel-btn prev-btn">Prev</button>
-        <button class="carousel-btn next-btn">Next</button>
+        {/* Can you make me a card in which first there should be an image then a nold heading then its description and the card's height should be longer and the card also in a carousal and there should also be logic to move it left to right or right to left make it attractive */}
+        <h1>Our Blogs</h1>
       </div>
     </>
   );
