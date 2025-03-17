@@ -85,6 +85,72 @@ const Home = () => {
     );
   };
 
+  const cards = [
+    {
+      id: 1,
+      imgSrc: "./pic1.webp",
+      heading: "Card 1",
+      description:
+        "This is an awesome card description. It can be anything here!",
+    },
+    {
+      id: 2,
+      imgSrc: "./pic7.webp",
+      heading: "Card 2",
+      description:
+        "This card is for showcasing a cool description. Take a look!",
+    },
+    {
+      id: 3,
+      imgSrc: "./pic6.webp",
+      heading: "Card 3",
+      description:
+        "Want to see something amazing? This card is here to amaze you!",
+    },
+    {
+      id: 4,
+      imgSrc: "./pic5.webp",
+      heading: "Card 4",
+      description:
+        "Want to see something amazing? This card is here to amaze you!",
+    },
+    {
+      id: 5,
+      imgSrc: "./pic4.webp",
+      heading: "Card 5",
+      description:
+        "Want to see something amazing? This card is here to amaze you!",
+    },
+    {
+      id: 6,
+      imgSrc: "./pic3.webp",
+      heading: "Card 6",
+      description:
+        "Want to see something amazing? This card is here to amaze you!",
+    },
+    {
+      id: 7,
+      imgSrc: "./pic2.webp",
+      heading: "Card 7",
+      description:
+        "Want to see something amazing? This card is here to amaze you!",
+    },
+    {
+      id: 8,
+      imgSrc: "./pic1.webp",
+      heading: "Card 8",
+      description:
+        "Want to see something amazing? This card is here to amaze you!",
+    },
+    {
+      id: 9,
+      imgSrc: "./pic3.webp",
+      heading: "Card 9",
+      description:
+        "Want to see something amazing? This card is here to amaze you!",
+    },
+  ];
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -464,8 +530,25 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Can you make me a card in which first there should be an image then a nold heading then its description and the card's height should be longer and the card also in a carousal and there should also be logic to move it left to right or right to left make it attractive */}
-        <h1>Our Blogs</h1>
+
+        <h1 className="blogs">Our Blogs</h1>
+        <div className="card-grid-container">
+          <div className="card-grid">
+            {cards.map((card) => (
+              <div key={card.id} className="card">
+                <img
+                  src={card.imgSrc}
+                  alt={card.heading}
+                  className="card-image"
+                />
+                <div className="card-content">
+                  <h2 className="card-heading">{card.heading}</h2>
+                  <p className="card-description">{card.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
