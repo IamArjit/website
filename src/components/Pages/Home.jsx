@@ -18,42 +18,60 @@ const Home = () => {
     {
       src: "./pic1.webp",
       alt: "Course 1",
-      description: "Course 1 description",
+      description: "25 Golden Rules of Astrovastu",
+      oldPrice: "₹10,000",
+      price: "₹8,000",
     },
     {
       src: "./pic2.webp",
       alt: "Course 2",
-      description: "Course 2 description",
+      description: "Two Days Master Class on Remedies",
+      oldPrice: "₹1,54,000",
+      price: "₹1,50,000",
     },
     {
       src: "./pic3.webp",
       alt: "Course 3",
-      description: "Course 3 description",
+      description: "Master Class on Gemstones (Rashi Ratna)",
+      oldPrice: "₹50,000",
+      price: "₹48,000",
     },
     {
       src: "./pic4.webp",
       alt: "Course 4",
-      description: "Course 4 description",
+      description: "Impact of Rahu on Your Health & Finance – Astro Vastu",
+      oldPrice: "₹78,000",
+      price: "₹75,000",
     },
     {
       src: "./pic5.webp",
       alt: "Course 5",
-      description: "Course 5 description",
+      description: "Master Course on Ashtakvarga",
+      oldPrice: "₹66,000",
+      price: "₹60,000",
     },
     {
       src: "./pic6.webp",
       alt: "Course 6",
-      description: "Course 6 description",
+      description:
+        "Mastering the Art of Astrology – A Mentorship Program by Hanish Bagga Become a Professional Astrologer",
+      oldPrice: "₹2,20,000",
+      price: "₹2,15,000",
     },
     {
       src: "./pic7.webp",
       alt: "Course 7",
-      description: "Course 7 description",
+      description:
+        "25 Golden Rules Impact of Rahu on Your Health & Finance – Astro Vastu Astrovastu",
+      oldPrice: "₹55,000",
+      price: "₹52,000",
     },
     {
       src: "./pic1.webp",
       alt: "Course 8",
-      description: "Course 8 description",
+      description: "Property Yoga in Birth Chart",
+      oldPrice: "₹98,000",
+      price: "₹96,000",
     },
   ];
 
@@ -220,6 +238,10 @@ const Home = () => {
                     className="carousel-image"
                   />
                   <p className="carousel-description">{image.description}</p>
+                  <p className="carousel-price">
+                    <span className="old-price">{image.oldPrice}</span>
+                    <span className="new-price">{image.price}</span>
+                  </p>
                 </div>
               ))}
           </div>
